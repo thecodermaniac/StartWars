@@ -3,7 +3,7 @@ import axios from "axios";
 import Loading from "./Loader";
 import Cards from "./Cards";
 import { toast } from "react-toastify";
-import pic from "../assets/startwars.png";
+
 const Home = () => {
   const [peopleList, SetList] = useState();
   const [isLoading, setLoading] = useState(true);
@@ -78,7 +78,7 @@ const Home = () => {
   };
 
   return (
-    <div className="h-[100vh]">
+    <div className="h-[90vh]">
       <div className="flex flex-row gap-4 justify-between mx-8">
         <div className="text-2xl font-bold font-[font-awesome] text-white caption-top w-[60%] flex justify-between">
           CHARACTER LIST     <u> Total Count:-{peopleList?.count}</u>
