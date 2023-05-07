@@ -3,7 +3,7 @@ import axios from "axios";
 import Loading from "./Loader";
 import Cards from "./Cards";
 import { toast } from "react-toastify";
-import pic from "../assets/startwars.png"; 
+import pic from "../assets/startwars.png";
 const Home = () => {
   const [peopleList, SetList] = useState();
   const [isLoading, setLoading] = useState(true);
@@ -67,7 +67,9 @@ const Home = () => {
     let sortarr = temparr.sort((a, b) => {
       if (parseInt(a[event.target.value]) > parseInt(b[event.target.value])) {
         return -1;
-      } else if (parseInt(a[event.target.value]) < parseInt(b[event.target.value])) {
+      } else if (
+        parseInt(a[event.target.value]) < parseInt(b[event.target.value])
+      ) {
         return 1;
       }
     });
@@ -76,17 +78,22 @@ const Home = () => {
   };
 
   return (
-    <div className="bg-[#242424] bg-right bg-no-repeat bg-cover shadow-lg font-[Titillium]" style={{backgroundImage:`url(${pic})`}}>
-      <div className="flex flex-row gap-4 justify-end">
-        <span className="text-white text-lg">Search Character</span>
-        <input
-          className="inline-flex shadow appearance-none border rounded  py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline"
-          type="text"
-          onChange={(e) => {
-            setSearch(e.target.value);
-          }}
-          value={search}
-        />
+    <div className="h-[100vh]">
+      <div className="flex flex-row gap-4 justify-between mx-8">
+        <div className="text-2xl font-bold font-[font-awesome] text-white caption-top w-[60%] flex justify-between">
+          CHARACTER LIST     <u> Total Count:-{peopleList?.count}</u>
+        </div>
+        <div>
+          <span className="text-white text-lg mx-3">Search Character</span>
+          <input
+            className="inline-flex shadow appearance-none border rounded  py-2 px-3 text-gray-900 leading-tight focus:outline-none focus:shadow-outline"
+            type="text"
+            onChange={(e) => {
+              setSearch(e.target.value);
+            }}
+            value={search}
+          />
+        </div>
       </div>
       <div className="w-[60%] flex flex-row gap-3">
         <table class="w-full text-left text-sm font-light text-white ml-4">
@@ -137,7 +144,7 @@ const Home = () => {
         </select>
       </div>
 
-      <div className="flex  flex-row gap-4 justify-end mt-2">
+      <div className="flex  flex-row gap-4 justify-end mx-8">
         <button
           onClick={handleprev}
           className="bg-white rounded-lg text-black border-white border-3 px-3 py-1"
