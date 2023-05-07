@@ -7,11 +7,11 @@ import TotalCards from "./components/TotalCards";
 
 function App() {
   return (
-    <div className="bg-[#242424]">
+    <div className="bg-[#242424] h-[100vh]">
       <ToastContainer />
       <Navbar />
       <Home />
-      <TotalCards/>
+      {/* <TotalCards/> */}
     </div>
   );
 }
