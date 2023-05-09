@@ -7,7 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
-    <div className="bg-[#242424] bg-right bg-no-repeat bg-cover shadow-lg font-[Titillium]" style={{backgroundImage:`url(${pic})`}}>
+    // style={{backgroundImage:`url(${pic})`}}
+    <div className="bg-[#242424] bg-right bg-no-repeat md:bg-cover shadow-lg font-[Titillium] md:bg-[url('./assets/startwars.png')]" >
       <ToastContainer />
       <Navbar />
       <Home />
